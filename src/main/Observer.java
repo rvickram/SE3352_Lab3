@@ -11,5 +11,5 @@ public abstract class Observer {
     /**
      * Calls any implementations to update from their subject.
      */
-    abstract void update();
+    abstract public void update();
 }

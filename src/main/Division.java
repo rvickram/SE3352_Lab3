@@ -44,7 +44,7 @@ public class Division extends Observer {
     }
 
     @Override
-    void update() {
-        this.labelDivision.setText("The Division is: " + subject.getNumberA()/subject.getNumberB());
+    public void update() {
+        this.labelDivision.setText("Division is: " + subject.getNumberA()/subject.getNumberB());
     }
 }
