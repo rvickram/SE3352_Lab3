@@ -54,5 +54,13 @@ public class MainController {
         Division division = new Division(this.subject);
         this.subject.attach(division);
         division.showStage();
+
+        Multiplication multiplication = new Multiplication(this.subject);
+        this.subject.attach(multiplication);
+        multiplication.showStage();
+
+        Addition addition = new Addition(this.subject);
+        this.subject.attach(addition);
+        addition.showStage();
     }
 }

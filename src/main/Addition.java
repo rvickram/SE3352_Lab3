@@ -1,23 +1,21 @@
-package main.gui;
+package main;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
-import main.Observer;
-import main.Subject;
 
 import java.io.IOException;
 
-public class Multiplication extends Observer {
+public class Addition extends Observer {
 
     private Stage stage;
 
     @FXML
-    private Label labelMultiplication;
+    private Label labelAddition;
 
-    public Multiplication(Subject subject) {
+    public Addition(final Subject subject) {
         super(subject);
 
         // Create the new stage
@@ -25,7 +23,7 @@ public class Multiplication extends Observer {
 
         // Load the FXML file
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("gui/Division.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("gui/Addition.fxml"));
 
             // Set this class as the controller
             loader.setController(this);
@@ -34,15 +32,20 @@ public class Multiplication extends Observer {
             this.stage.setScene(new Scene(loader.load()));
 
             // Setup the window/stage
-            this.stage.setTitle("Division");
+            this.stage.setTitle("Addition");
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
 
+    public void showStage() {
+        this.stage.show();
+    }
+
+
     @Override
     public void update() {
-        this.labelMultiplication.setText("Division is: " + subject.getNumberA()/subject.getNumberB());
+        this.labelAddition.setText("Addition is: " + (subject.getNumberA()+subject.getNumberB()));
     }
 }
